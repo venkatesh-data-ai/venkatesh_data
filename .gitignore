@@ -1,0 +1,7 @@
+.Rhistory
+.Rproj.user/
+*.RData
+*.rds
+__pycache__/
+.ipynb_checkpoints/
+.DS_Store
