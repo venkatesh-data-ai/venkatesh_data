@@ -1,100 +1,155 @@
-# CareBridge — Integrated Platform for Mental Health Service Coordination
+# Venkatesh Athikulam Muthusamy
 
-A university proof-of-concept web application demonstrating how SMART-on-FHIR interoperability can support referral and transfer-of-care workflows between community mental-health services.
+### Data Science | Data Analytics | Business Intelligence
 
-## Overview
+Data Science graduate from **The University of Queensland** with a background in Electrical Engineering and hands-on experience across data science, machine learning, statistical modelling, software testing and technical problem-solving.
 
-CareBridge was developed as a team project for COMP3820. The prototype focused on a depression-care referral pathway between two simulated community mental-health clinics.
+I am interested in **Data Analyst, Data Science, Business Intelligence and Reporting Analyst** opportunities where I can apply analytical and technical skills to solve practical problems and generate meaningful insights.
 
-The application provides separate experiences for clinicians and consumers, using synthetic FHIR data and standards-based APIs.
+---
 
-## Key Features
+## 🛠️ Technical Skills
 
-- SMART-on-FHIR authentication using OAuth 2.0
-- Role-based clinician and consumer interfaces
-- Retrieval and display of synthetic patient information
-- Transfer-of-care referrals using FHIR `Task` resources
-- Patient consent using FHIR `Consent` resources
-- Appointment and referral tracking in the consumer portal
-- FHIR R4 integration with the HAPI FHIR public test server
-- Error handling and validation for FHIR operations
-- Automated component/API testing using Vitest and React Testing Library
+### Programming & Data Analysis
+- Python
+- R
+- SQL
+- Pandas
+- NumPy
 
-## Technology Stack
+### Machine Learning & Statistics
+- Scikit-learn
+- Regression
+- Classification
+- Clustering
+- Statistical Modelling
+- Model Evaluation
+- Cross-Validation
+- Feature Analysis
 
-- React 19
-- TypeScript 5.8
-- Vite 7
-- fhirclient.js
+### Data Visualisation
+- Matplotlib
+- Seaborn
+- R Visualisation
+
+### Databases & Tools
+- MySQL
+- Git
+- GitHub
+- Jupyter Notebook
+
+### Other Technical Experience
+- React
+- TypeScript
 - SMART-on-FHIR
-- OAuth 2.0
 - FHIR R4
-- HAPI FHIR
-- React Router
-- CSS Modules
-- Vitest
-- React Testing Library
+- Docker
+- Kubernetes
+- Google Cloud
+- ServiceNow
+- Selenium
+- Manual & Functional Testing
 
-## Architecture
+---
 
-The prototype uses a browser-based client-side architecture:
+# 📊 Featured Projects
 
-1. React frontend
-2. SMART Health IT Launcher for authentication/authorization
-3. HAPI FHIR R4 public test server for synthetic clinical resources
+## 1. Interpretable Statistical Modelling for High-Dimensional Biological Data
 
-The project deliberately avoided real patient data and was designed as a proof of concept rather than a production clinical system.
+**Python | R | Scikit-learn | Statistical Modelling | Machine Learning**
 
-## FHIR Resources
+Data Science Capstone project investigating interpretable Mixture of Experts models for high-dimensional biological data.
 
-The project used standard FHIR resources including:
+The project implemented **BLLiM, GLLiM and GLLiM-Lw** and benchmarked them against Random Forest, Support Vector Machine, MARS and SIR. The models were evaluated using synthetic datasets and a real maize proteomics dataset containing **233 samples and 973 protein features**.
 
-- `Patient` — synthetic patient demographics
-- `Condition` — depression-related clinical information
-- `Task` — transfer-of-care requests
-- `Consent` — permission for data sharing
-- `Appointment` — consumer appointment information
-- `Organization` / `Practitioner` — participating clinics and clinicians
+### Highlights
+- Reimplemented BLLiM and GLLiM approaches in Python
+- Created 12 synthetic datasets
+- Evaluated multiple covariance/noise structures
+- Compared seven modelling approaches using RMSE
+- Applied models to real maize proteomics data
+- Used model coefficients and protein networks for interpretability
+- Reproduced key results from the reference research
 
-## Testing
+➡️ **[View Capstone Project](./capstone/)**
 
-Testing combined automated unit/component tests with manual browser-based workflow testing.
+---
 
-The report documents tests for:
+## 2. Machine Learning Classification of High-Protein Foods
 
-- SMART login flows
-- Consumer/User View
-- Patient table
-- FHIR API request construction
-- Clinical View and transfer actions
-- Integration with the HAPI FHIR server
+**Python | Pandas | Scikit-learn | Logistic Regression | k-NN | Random Forest**
 
-## My Contribution
+Machine learning classification project using nutritional data to predict whether a food is high in protein without directly using protein as a predictor.
+
+The project included data preprocessing, exploratory data analysis, feature analysis, model development, cross-validation and hyperparameter tuning.
+
+### Highlights
+- Processed **1,588 food samples**
+- Performed missing-value handling and feature selection
+- Compared Logistic Regression, k-NN and Random Forest
+- Used GridSearchCV for hyperparameter optimisation
+- Analysed feature importance
+- Achieved **97.2% accuracy** with the tuned Random Forest model
+
+➡️ **[View Machine Learning Project](./machine-learning/)**
+
+---
+
+## 3. CareBridge — Mental Health Service Coordination
+
+**React | TypeScript | SMART-on-FHIR | FHIR R4 | HAPI FHIR | OAuth 2.0**
+
+A team-developed proof-of-concept application demonstrating how healthcare interoperability can support referral and transfer-of-care workflows between community mental-health services.
+
+### Highlights
+- Developed a React and TypeScript web application
+- Integrated SMART-on-FHIR authentication
+- Worked with FHIR R4 resources
+- Integrated the HAPI FHIR test server
+- Implemented clinician and consumer interfaces
+- Developed Consumer/User View functionality
+- Implemented navigation and appointment tracking
+- Contributed to testing, debugging and documentation
+
+➡️ **[View CareBridge Project](./carebridge/)**
+
+---
+
+# 🎓 Education
+
+### Master of Data Science
+**The University of Queensland**
+
+### Bachelor of Electrical Engineering
+
+---
+
+# 📌 Areas of Interest
+
+- Data Analytics
+- Data Science
+- Business Intelligence
+- Reporting & Insights
+- Machine Learning
+- Statistical Modelling
+- Data Visualisation
+- SQL & Data Management
+
+---
+
+# 📫 Connect
 
 **Venkatesh Athikulam Muthusamy**
 
-- Developed the Consumer/User View
-- Implemented navigation between application views
-- Implemented appointment tracking functionality
-- Contributed to documentation, testing and debugging
-- Worked as part of the team on the overall CareBridge proof of concept
+Brisbane, Australia
 
-## Important Project Notes
+- [LinkedIn](https://www.linkedin.com/)
+- [GitHub](https://github.com/venkatesh-data-ai)
 
-This was an academic proof of concept using synthetic data. The consumer portal included mock appointment/referral data where corresponding FHIR resources were not fully implemented.
+---
 
-The project identified production improvements including a dedicated FHIR server, a backend service layer, stronger server-side authorization, audit logging, refresh-token handling and expanded clinical pathways.
+## ⭐ Portfolio
 
-## Files
+This repository contains selected academic and technical projects demonstrating experience in:
 
-- `CareBridge_final_report.docx` — Detailed project report
-- `CareBridge_presentation.pptx` — Project presentation
-
-## Project Team
-
-COMP3820 — Team Jets
-
-- Oda Bang-Olsen
-- Venkatesh Athikulam Muthusamy
-- Hanna Jacobsen
-
+**Python • R • SQL • Machine Learning • Statistical Modelling • Data Analytics • Business Intelligence • Healthcare Interoperability • Cloud & Technical Systems**
