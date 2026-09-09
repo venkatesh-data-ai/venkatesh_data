@@ -1,135 +1,149 @@
 # Interpretable Statistical Modelling for High-Dimensional Biological Data
 
-A Data Science Capstone project focused on implementing interpretable Mixture of Experts models in Python for high-dimensional heterogeneous biological data.
+## 📌 Project Overview
 
-## Project Overview
+This Data Science Capstone project investigates interpretable statistical modelling approaches for high-dimensional and heterogeneous biological data.
 
-The project investigated how statistical models can provide accurate predictions while remaining interpretable for complex biological datasets.
+The project focuses on **Mixture of Experts (MoE)** models, particularly **BLLiM, GLLiM and GLLiM-Lw**, and compares their performance with established machine learning and statistical approaches.
 
-The main models were **BLLiM (Block-diagonal Locally Linear Mapping)** and **GLLiM (Global Locally Linear Mapping)**, originally introduced by Blein-Nicolas et al. (2024).
+The final implementation focused on developing Python-based implementations of the models and evaluating their predictive performance and interpretability.
 
-Both models were reimplemented in Python using a scikit-learn-style API. :contentReference[oaicite:8]{index=8}
+---
 
-## Research Focus
+## 🎯 Project Objective
 
-The project addressed the challenge of modelling datasets containing many features but relatively few observations while maintaining model interpretability.
+The main objective was to investigate whether Mixture of Experts models can provide accurate predictions while maintaining useful interpretability when working with high-dimensional biological datasets.
 
-The approach combined:
+The project focused on:
 
-- Mixture of Experts modelling
-- Local regression
-- High-dimensional statistical modelling
-- Structured covariance modelling
-- Machine learning benchmarking
+- Predictive performance
 - Model interpretability
+- High-dimensional feature spaces
+- Heterogeneous data
+- Cluster-specific regression relationships
+- Biological feature and network interpretation
 
-## Methodology
+---
 
-### Synthetic Experiments
+## 🧠 Models
 
-Twelve synthetic datasets were generated using nonlinear transformations and different covariance structures:
+The project evaluated the following approaches:
 
-- Independent
-- Block-diagonal
-- Factor
-- Toeplitz
-
-Seven models were benchmarked:
+### Mixture of Experts Models
 
 - BLLiM
 - GLLiM
 - GLLiM-Lw
+
+### Baseline Models
+
 - Random Forest
 - Support Vector Machine / SVR
 - MARS
 - SIR
 
-Model performance was evaluated using **Root Mean Squared Error (RMSE)**. :contentReference[oaicite:9]{index=9}
+Model performance was primarily evaluated using **Root Mean Squared Error (RMSE)**.
 
-### Real-World Dataset
+---
 
-The models were also applied to a maize proteomics dataset containing:
+## 📊 Synthetic Data
+
+A series of synthetic datasets was created to evaluate model behaviour under different conditions.
+
+The experiment included:
+
+- **12 synthetic datasets**
+- **200 samples per dataset**
+- **50 features**
+- Multiple nonlinear functions
+- Different covariance and noise structures
+
+The covariance/noise structures included:
+
+- Independent
+- Block
+- Factor
+- Toeplitz
+
+The synthetic experiments were repeated across multiple independent runs to compare model performance under different data-generating conditions.
+
+---
+
+## 🌽 Real Biological Dataset
+
+The models were also evaluated using a real **maize proteomics dataset**.
+
+The dataset contained:
 
 - **233 samples**
 - **973 protein features**
 
-The objective was to predict:
+The analysis focused on predicting biological traits including:
 
-- Leaf Area Index under Water Deficit (`LAI.WD`)
-- Water Use under Water Deficit (`WU.WD`)
+- Leaf Area Index under Water Deficit (LAI.WD)
+- Water Use under Water Deficit (WU.WD)
 
-:contentReference[oaicite:10]{index=10}
+Model evaluation used **10-fold cross-validation**.
 
-## Python Implementation
+---
 
-A major technical contribution was the development of a reusable Python implementation of BLLiM using a scikit-learn-style interface.
+## 🔬 Methodology
 
-The implementation was designed to integrate with modern machine learning workflows and reduce reliance on the original R-based implementation. :contentReference[oaicite:11]{index=11}
+The overall workflow included:
 
-## Key Results
+1. Synthetic data generation
+2. Data preprocessing
+3. Model implementation
+4. Model fitting
+5. Prediction
+6. RMSE-based evaluation
+7. Comparison with baseline models
+8. Application to real biological data
+9. Regression coefficient analysis
+10. Protein network interpretation
 
-The experiments showed that model performance depended on the underlying noise structure.
+The Python implementation was designed using a scikit-learn-style API to provide a consistent interface for model fitting and prediction.
 
-- BLLiM performed particularly well with structured noise such as block-diagonal and Toeplitz covariance.
-- GLLiM performed better under independent noise conditions.
-- GLLiM-Lw provided a useful balance between the approaches.
-- BLLiM achieved the lowest RMSE for both target traits on the maize proteomics dataset.
-- The models produced interpretable cluster-specific regression coefficients and protein interaction networks.
+---
 
-:contentReference[oaicite:12]{index=12}
+## 📈 Key Findings
 
-## Interpretability
+The experiments demonstrated that model performance depended on the underlying noise and covariance structure.
 
-An important aspect of the project was understanding **why** models produced their predictions rather than focusing only on predictive accuracy.
+### Synthetic Data
 
-The BLLiM implementation provided:
+- **BLLiM** performed particularly well under structured noise conditions such as Block and Toeplitz structures.
+- **GLLiM** performed better under independent noise conditions.
+- **GLLiM-Lw** provided a useful trade-off between the modelling approaches.
 
-- Cluster-specific regression coefficients
-- Protein relationship information
-- Interpretable local models
-- Biological network insights
+### Real Data
 
-This helped connect statistical modelling results with biological interpretation. :contentReference[oaicite:13]{index=13}
+BLLiM achieved the lowest RMSE for the evaluated real-data target traits.
 
-## Challenges
+The model also provided interpretable cluster-specific regression coefficients and protein interaction/co-regulation networks.
 
-Key technical challenges included:
+---
 
-- Translating complex R-based algorithms into Python
-- Debugging and validating the implementation
-- Managing high-dimensional covariance matrices
-- Selecting the number of mixture clusters
-- Validating results against the reference implementation
+## 🔎 Model Interpretability
 
-:contentReference[oaicite:14]{index=14}
+A major focus of the project was understanding **why** the models make their predictions.
 
-## Future Work
+BLLiM produced cluster-specific regression weights that helped identify groups of proteins associated with different biological relationships.
 
-Potential improvements include:
+The analysis also examined protein networks derived from covariance structures, revealing modular patterns that could support biological interpretation.
 
-- Automated cluster selection using AIC/BIC
-- Sparse matrix techniques
-- GPU acceleration
-- Feature reduction
-- Improved computational scalability
-- Applications to genomics, clinical diagnostics and neuroimaging
+---
 
-:contentReference[oaicite:15]{index=15}
+## 🛠️ Technologies
 
-## Project Files
-
-- `capstone_report.pdf` — Final Data Science Capstone report
-- `capstone_presentation.pptx` — Project presentation
-- `executive_summary.pdf` — Executive summary
-- `week4_run_method.R` — Supporting R analysis
-- `week6_run_method.R` — Supporting R analysis
-- `plot_results.R` — Results visualisation
-- `regression_coefficients.csv` — Regression coefficient results
-
-## Education
-
-**DATA7903 — Data Science Capstone Project**
-
-**The University of Queensland**
-
-**Author:** Venkatesh Athikulam Muthusamy
+- Python
+- R
+- Scikit-learn
+- Statistical Modelling
+- Machine Learning
+- Pandas
+- NumPy
+- Matplotlib
+- Data Visualisation
+- Cross-Validation
+- High-Dimensional Data Analysis
