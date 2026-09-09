@@ -143,7 +143,7 @@ A team-developed proof-of-concept application demonstrating how healthcare inter
 
 Brisbane, Australia
 
-- [LinkedIn](https://www.linkedin.com/)
+- [LinkedIn](https://www.linkedin.com/in/venkatesh-a-m-18998014b)
 - [GitHub](https://github.com/venkatesh-data-ai)
 
 ---
