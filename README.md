@@ -1,133 +1,49 @@
-# Venkatesh Athikulam Muthusamy
+# Machine Learning Classification of High-Protein Foods Using Nutrient Data
 
-### Data Science | Data Analytics | Business Intelligence
+## Overview
+A DATA7703 Machine Learning project investigating whether nutrient values can classify foods as high protein without using protein itself as a predictor.
 
-Master of Data Science graduate from The University of Queensland with a background in Electrical Engineering and practical experience in data analysis, machine learning, statistical modelling and technical problem-solving.
+## Research Question
+Can nutrient values be used to classify whether a food is high in protein without directly using the protein value itself?
 
-I am interested in Data Analyst, Reporting Analyst, Business Intelligence and Data Science opportunities where I can use data to solve practical business problems and communicate meaningful insights.
+## Dataset
+- Australian Food Composition Database (AFCD) Release 3
+- 1,588 food samples initially
+- 272 columns initially
+- Final cleaned dataset: 1,588 samples and 146 columns
+- High-protein threshold: >= 10 g protein per 100 g
+- Protein and nitrogen were excluded from predictors to reduce data leakage
+- Missing-value columns above 70% were removed; remaining numeric missing values were median-imputed
 
----
+## Machine Learning Workflow
+1. Data cleaning and preprocessing
+2. Exploratory data analysis
+3. Logistic Regression
+4. k-Nearest Neighbours (k-NN)
+5. Random Forest
+6. Random Forest hyperparameter tuning with GridSearchCV and 5-fold cross-validation
+7. Model comparison using accuracy, precision, recall and F1-score
+8. Feature importance analysis
 
-## 🛠️ Technical Skills
+## Results
+| Model | Accuracy | Precision | Recall | F1-score |
+|---|---:|---:|---:|---:|
+| Logistic Regression | 95.6% | 94.8% | 94.8% | 94.8% |
+| k-NN | 91.2% | 93.5% | 85.2% | 89.1% |
+| Random Forest | 96.5% | 95.6% | 96.3% | 95.9% |
+| Tuned Random Forest | **97.2%** | **96.3%** | **97.0%** | **96.7%** |
 
-**Programming & Data Analysis**
-- Python
-- R
-- SQL
-- Pandas
-- NumPy
+The tuned Random Forest produced the strongest overall performance. Important predictors included tryptophan, phosphorus, selenium and zinc.
 
-**Machine Learning & Statistics**
-- Scikit-learn
-- Regression
-- Classification
-- Clustering
-- Model evaluation
-- Statistical modelling
-- Cross-validation
+## Key Skills Demonstrated
+- Python-based machine learning workflow
+- pandas data preparation
+- Exploratory data analysis and visualisation
+- Feature selection and leakage prevention
+- Logistic Regression, k-NN and Random Forest
+- GridSearchCV and cross-validation
+- Classification metrics and confusion matrices
+- Feature importance and model interpretation
 
-**Visualisation**
-- Matplotlib
-- Seaborn
-- R visualisation tools
-
-**Databases & Tools**
-- MySQL
-- Git
-- GitHub
-- Jupyter Notebook
-
----
-
-## 📊 Featured Project
-
-### Enhancing the Interpretability of Statistical Models on High-Dimensional Heterogeneous Data Using Mixture of Expert Models with Python
-
-A Data Science Capstone project completed at The University of Queensland.
-
-The project investigated interpretable statistical models for predicting biological traits from high-dimensional data using Mixture of Experts approaches.
-
-### Key Areas
-
-- Implemented and evaluated BLLiM, GLLiM and GLLiM-Lw approaches
-- Developed Python implementations using a scikit-learn style API
-- Generated and evaluated synthetic datasets with different nonlinear functions and covariance structures
-- Compared model performance using RMSE
-- Conducted evaluation across 100 independent synthetic-data runs
-- Applied models to a real maize proteomics dataset
-- Evaluated real-world performance using 10-fold cross-validation
-- Compared Mixture of Experts models with Random Forest, SVM/SVR, MARS and SIR
-- Analysed cluster-specific regression coefficients and protein relationships
-- Reproduced key results from the reference research paper
-
-### Dataset
-
-The real-world dataset contained:
-
-- 233 samples
-- 973 protein features
-- Biological target traits including Leaf Area Index and Water Use under Water Deficit
-
-### Key Findings
-
-The evaluation showed that model performance depended on the underlying data structure.
-
-- BLLiM performed particularly well with structured covariance patterns such as Block and Toeplitz
-- GLLiM performed well under independent noise
-- GLLiM-Lw provided a balance between the approaches
-- BLLiM achieved strong performance on the real maize proteomics data
-- The models provided interpretable cluster-specific relationships between predictors and biological traits
-
-### Repository Contents
-
-The `capstone/` folder contains selected project materials:
-
-- `capstone_report.pdf` — Final project report
-- `capstone_presentation.pptx` — Project presentation
-- `executive_summary.pdf` — Executive summary
-- `week4_run_method.R` — Model execution workflow
-- `week6_run_method.R` — Comparative evaluation workflow
-- `plot_results.R` — Results visualisation workflow
-- `regression_coefficients.csv` — Regression coefficient results
-
-The final capstone report documents the broader Python implementation and evaluation pipeline. Intermediate `.RData` working files are intentionally excluded from this portfolio repository.
-
----
-
-## 🎓 Education
-
-**Master of Data Science**  
-The University of Queensland
-
-**Bachelor of Electrical Engineering**
-
----
-
-## 📌 Areas of Interest
-
-- Data Analytics
-- Data Science
-- Business Intelligence
-- Reporting & Insights
-- Machine Learning
-- Statistical Modelling
-- Data Visualisation
-- SQL & Data Management
-
----
-
-## 📫 Contact
-
-**Venkatesh Athikulam Muthusamy**
-
-Brisbane, Australia
-
-[GitHub](https://github.com/venkatesh-data-ai)
-
----
-
-## 📚 Reference
-
-Blein-Nicolas, M., Nguyen, T. T., Gelly, M., & Besse, P. (2024).  
-*Nonlinear network-based quantitative trait prediction from biological data.*  
-Journal of the Royal Statistical Society: Series C (Applied Statistics).
+## Portfolio Note
+The original Python notebook/script is not included because the source code is not currently available. This repository therefore presents the submitted project report and its documented results without recreating or inventing source code.
