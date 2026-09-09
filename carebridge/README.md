@@ -1,127 +1,187 @@
 # CareBridge — Mental Health Service Coordination
 
-A proof-of-concept web application demonstrating how SMART-on-FHIR interoperability can improve referral and transfer-of-care workflows between community mental-health services.
+## 📌 Project Overview
 
-## Project Overview
+CareBridge is a team-developed proof-of-concept web application demonstrating how healthcare interoperability can support mental health referral and transfer-of-care workflows.
 
-CareBridge was developed as a COMP3820 team project. The application focused on a depression-care referral pathway between two simulated community mental-health clinics.
+The project uses **SMART-on-FHIR** and **FHIR R4** to demonstrate how patient information, appointments, referrals and consent can be managed across healthcare services.
 
-The system provides separate interfaces for clinicians and consumers and uses synthetic FHIR data. :contentReference[oaicite:0]{index=0}
+---
 
-## Key Features
+## 🎯 Project Objectives
 
-- SMART-on-FHIR authentication using OAuth 2.0
-- Separate clinician and consumer interfaces
-- Synthetic patient data
-- Patient record viewing
-- Transfer-of-care referrals
-- Referral status tracking
-- Patient consent management
-- Appointment tracking
-- FHIR R4 API integration
-- Error handling and validation
+The main objectives were to:
 
-## Technology Stack
+- Support mental health service coordination
+- Demonstrate healthcare interoperability using FHIR
+- Support referral and transfer-of-care workflows
+- Provide different user interfaces for healthcare and consumer users
+- Demonstrate secure authentication using SMART-on-FHIR
+
+---
+
+## 🏗️ Architecture
+
+The application uses a client-side architecture built around:
+
+- React frontend
+- TypeScript
+- SMART Health IT Launcher
+- SMART-on-FHIR authentication
+- HAPI FHIR test server
+
+The application communicates with the FHIR server through FHIR APIs.
+
+---
+
+## 🧩 FHIR Resources
+
+The project worked with several FHIR R4 resources, including:
+
+- Patient
+- Condition
+- Task
+- Consent
+- Appointment
+- Organization
+- Practitioner
+
+For example:
+
+**Task** was used to support transfer-of-care workflows, while **Consent** was used to represent permission for sharing patient information.
+
+---
+
+## 💻 Technology Stack
+
+### Frontend
 
 - React 19
 - TypeScript 5.8
 - Vite 7
-- fhirclient.js
-- SMART-on-FHIR
-- OAuth 2.0
-- FHIR R4
-- HAPI FHIR
 - React Router
 - CSS Modules
+
+### Healthcare Interoperability
+
+- SMART-on-FHIR
+- FHIR R4
+- fhirclient.js
+- OAuth 2.0
+- HAPI FHIR
+
+### Testing
+
 - Vitest
 - React Testing Library
 
-The frontend uses React, TypeScript and Vite, with fhirclient.js handling SMART-on-FHIR functionality. :contentReference[oaicite:1]{index=1}
+---
 
-## Architecture
+## 👨‍💻 My Contribution
 
-The application uses a client-side architecture consisting of:
-
-1. React frontend
-2. SMART Health IT Launcher for authentication
-3. HAPI FHIR public test server for synthetic clinical data
-
-The prototype communicates directly with the FHIR server without a custom backend. :contentReference[oaicite:2]{index=2}
-
-## FHIR Resources
-
-The project implemented and worked with:
-
-- `Patient`
-- `Condition`
-- `Task`
-- `Consent`
-- `Appointment`
-- `Organization`
-- `Practitioner`
-
-`Task` resources were used to represent transfer-of-care requests, while `Consent` resources represented permission for data sharing. :contentReference[oaicite:3]{index=3}
-
-## Testing
-
-Testing included automated unit/component testing and manual browser-based testing.
-
-Testing covered:
-
-- SMART authentication
-- Consumer/User View
-- Patient table
-- FHIR API requests
-- Clinical View
-- Transfer workflows
-- HAPI FHIR integration
-
-The project used Vitest and React Testing Library for automated testing. :contentReference[oaicite:4]{index=4}
-
-## My Contribution
-
-**Venkatesh Athikulam Muthusamy**
+As part of the project team, my documented contributions included:
 
 - Developed the Consumer/User View
 - Implemented application navigation
-- Implemented appointment tracking
+- Implemented appointment tracking functionality
 - Contributed to testing and debugging
-- Contributed to documentation and overall project development
+- Contributed to project documentation and overall development
 
-The final report documents these individual contributions. :contentReference[oaicite:5]{index=5}
+---
 
-## Project Outcomes
+## 🔄 Key Features
 
-The prototype successfully demonstrated secure clinician and consumer login, shared patient information, transfer-of-care workflows and referral tracking between simulated clinics. :contentReference[oaicite:6]{index=6}
+### Consumer/User View
 
-## Limitations
+Provides a user-facing interface for viewing relevant referral and appointment information.
 
-This was an academic proof of concept using synthetic data.
+### Appointment Tracking
 
-The consumer portal used mock appointment/referral data, and the system did not include production-level server-side authorization, audit logging or a dedicated FHIR server. :contentReference[oaicite:7]{index=7}
+Implemented functionality for tracking appointment information within the application.
 
-## Future Improvements
+### Referral & Transfer Workflows
 
-Potential future improvements include:
+The application demonstrates workflows for coordinating patient transfers between mental health services.
 
-- Dedicated/private FHIR server
-- Backend service layer
+### SMART-on-FHIR Authentication
+
+The application uses SMART-on-FHIR authentication to demonstrate secure access to healthcare information.
+
+### FHIR Integration
+
+The system interacts with a HAPI FHIR test server using FHIR R4 resources.
+
+---
+
+## 🧪 Testing
+
+Testing covered several important application areas, including:
+
+- SMART authentication
+- Consumer/User View
+- Patient information display
+- FHIR API requests
+- Clinical View
+- Transfer-of-care workflows
+- HAPI FHIR integration
+
+Testing and debugging were performed throughout development to identify and resolve application issues.
+
+---
+
+## 📈 Project Outcome
+
+CareBridge demonstrated how healthcare interoperability standards can be used to support mental health service coordination.
+
+The project provided practical experience with:
+
+- Healthcare data interoperability
+- FHIR APIs
+- SMART-on-FHIR authentication
+- React and TypeScript development
+- Application testing
+- Team-based software development
+
+---
+
+## ⚠️ Limitations
+
+CareBridge was developed as an academic proof of concept using synthetic/test data.
+
+The project did not represent a production healthcare system.
+
+Potential production-level improvements would include:
+
+- Dedicated/private FHIR infrastructure
+- Stronger server-side authorisation
 - Audit logging
-- Stronger server-side authorization
+- Backend service layer
 - Refresh-token support
 - Real FHIR Appointment resources
-- Additional mental-health pathways
-- Cloud deployment and scalability
+- Additional referral pathways
+- Improved scalability
 
-## Project Files
+---
 
-- `CareBridge_final_report.docx` — Detailed project report
-- `CareBridge_presentation.pptx` — Project presentation
+## 🚀 Future Improvements
 
-## Project Team
+Future development could include:
 
-**COMP3820 — Team Jets**
+- Additional mental health referral pathways
+- Production-ready authentication and authorisation
+- Dedicated FHIR infrastructure
+- Comprehensive audit logging
+- Backend service integration
+- Additional healthcare workflows
+- Improved scalability and deployment architecture
 
-- Oda Bang-Olsen
-- Venkatesh Athikulam Muthusamy
-- Hanna Jacobsen
+---
+
+## 📁 Project Files
+
+```text
+carebridge/
+│
+├── README.md
+├── CareBridge_final_report.docx
+└── CareBridge_presentation.pptx
