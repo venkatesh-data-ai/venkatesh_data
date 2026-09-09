@@ -1,49 +1,100 @@
-# Machine Learning Classification of High-Protein Foods Using Nutrient Data
+# CareBridge — Integrated Platform for Mental Health Service Coordination
+
+A university proof-of-concept web application demonstrating how SMART-on-FHIR interoperability can support referral and transfer-of-care workflows between community mental-health services.
 
 ## Overview
-A DATA7703 Machine Learning project investigating whether nutrient values can classify foods as high protein without using protein itself as a predictor.
 
-## Research Question
-Can nutrient values be used to classify whether a food is high in protein without directly using the protein value itself?
+CareBridge was developed as a team project for COMP3820. The prototype focused on a depression-care referral pathway between two simulated community mental-health clinics.
 
-## Dataset
-- Australian Food Composition Database (AFCD) Release 3
-- 1,588 food samples initially
-- 272 columns initially
-- Final cleaned dataset: 1,588 samples and 146 columns
-- High-protein threshold: >= 10 g protein per 100 g
-- Protein and nitrogen were excluded from predictors to reduce data leakage
-- Missing-value columns above 70% were removed; remaining numeric missing values were median-imputed
+The application provides separate experiences for clinicians and consumers, using synthetic FHIR data and standards-based APIs.
 
-## Machine Learning Workflow
-1. Data cleaning and preprocessing
-2. Exploratory data analysis
-3. Logistic Regression
-4. k-Nearest Neighbours (k-NN)
-5. Random Forest
-6. Random Forest hyperparameter tuning with GridSearchCV and 5-fold cross-validation
-7. Model comparison using accuracy, precision, recall and F1-score
-8. Feature importance analysis
+## Key Features
 
-## Results
-| Model | Accuracy | Precision | Recall | F1-score |
-|---|---:|---:|---:|---:|
-| Logistic Regression | 95.6% | 94.8% | 94.8% | 94.8% |
-| k-NN | 91.2% | 93.5% | 85.2% | 89.1% |
-| Random Forest | 96.5% | 95.6% | 96.3% | 95.9% |
-| Tuned Random Forest | **97.2%** | **96.3%** | **97.0%** | **96.7%** |
+- SMART-on-FHIR authentication using OAuth 2.0
+- Role-based clinician and consumer interfaces
+- Retrieval and display of synthetic patient information
+- Transfer-of-care referrals using FHIR `Task` resources
+- Patient consent using FHIR `Consent` resources
+- Appointment and referral tracking in the consumer portal
+- FHIR R4 integration with the HAPI FHIR public test server
+- Error handling and validation for FHIR operations
+- Automated component/API testing using Vitest and React Testing Library
 
-The tuned Random Forest produced the strongest overall performance. Important predictors included tryptophan, phosphorus, selenium and zinc.
+## Technology Stack
 
-## Key Skills Demonstrated
-- Python-based machine learning workflow
-- pandas data preparation
-- Exploratory data analysis and visualisation
-- Feature selection and leakage prevention
-- Logistic Regression, k-NN and Random Forest
-- GridSearchCV and cross-validation
-- Classification metrics and confusion matrices
-- Feature importance and model interpretation
+- React 19
+- TypeScript 5.8
+- Vite 7
+- fhirclient.js
+- SMART-on-FHIR
+- OAuth 2.0
+- FHIR R4
+- HAPI FHIR
+- React Router
+- CSS Modules
+- Vitest
+- React Testing Library
 
-## Portfolio Note
-The original Python notebook/script is not included because the source code is not currently available. This repository therefore presents the submitted project report and its documented results without recreating or inventing source code.
+## Architecture
+
+The prototype uses a browser-based client-side architecture:
+
+1. React frontend
+2. SMART Health IT Launcher for authentication/authorization
+3. HAPI FHIR R4 public test server for synthetic clinical resources
+
+The project deliberately avoided real patient data and was designed as a proof of concept rather than a production clinical system.
+
+## FHIR Resources
+
+The project used standard FHIR resources including:
+
+- `Patient` — synthetic patient demographics
+- `Condition` — depression-related clinical information
+- `Task` — transfer-of-care requests
+- `Consent` — permission for data sharing
+- `Appointment` — consumer appointment information
+- `Organization` / `Practitioner` — participating clinics and clinicians
+
+## Testing
+
+Testing combined automated unit/component tests with manual browser-based workflow testing.
+
+The report documents tests for:
+
+- SMART login flows
+- Consumer/User View
+- Patient table
+- FHIR API request construction
+- Clinical View and transfer actions
+- Integration with the HAPI FHIR server
+
+## My Contribution
+
+**Venkatesh Athikulam Muthusamy**
+
+- Developed the Consumer/User View
+- Implemented navigation between application views
+- Implemented appointment tracking functionality
+- Contributed to documentation, testing and debugging
+- Worked as part of the team on the overall CareBridge proof of concept
+
+## Important Project Notes
+
+This was an academic proof of concept using synthetic data. The consumer portal included mock appointment/referral data where corresponding FHIR resources were not fully implemented.
+
+The project identified production improvements including a dedicated FHIR server, a backend service layer, stronger server-side authorization, audit logging, refresh-token handling and expanded clinical pathways.
+
+## Files
+
+- `CareBridge_final_report.docx` — Detailed project report
+- `CareBridge_presentation.pptx` — Project presentation
+
+## Project Team
+
+COMP3820 — Team Jets
+
+- Oda Bang-Olsen
+- Venkatesh Athikulam Muthusamy
+- Hanna Jacobsen
+
